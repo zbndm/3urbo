@@ -33,11 +33,11 @@ const Home: NextPage = () => {
           </h1>
           <AuthShowcase />
 
-          <div className="flex h-[60vh] justify-center overflow-y-scroll px-4 text-2xl">
+          <div>
             {postQuery.data ? (
-              <div className="flex flex-col gap-4">
+              <div>
                 {postQuery.data?.map((p) => {
-                  return <PostCard key={p.id} post={p} />;
+                  return <div key={p.id} post={p} />;
                 })}
               </div>
             ) : (
