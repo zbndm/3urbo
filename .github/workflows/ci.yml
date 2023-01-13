@@ -4,7 +4,7 @@ on:
   # pull_request:
   #   branches: ["*"]
   push:
-    # branches: ["main"]
+    branches: ["*"]
 
 # You can leverage Vercel Remote Caching with Turbo to speed up your builds
 # @link https://turborepo.org/docs/core-concepts/remote-caching#remote-caching-on-vercel-builds
@@ -15,7 +15,7 @@ env:
 jobs:
   build-lint:
     env:
-      DATABASE_URL: postgresql://o9:TgFtBKrhqxTCpuo0Y_lN2Q@lllllll-3389.6zw.cockroachlabs.cloud:26257/x?sslmode=verify-full
+      DATABASE_URL: postgres://vsamaru:3WZsgHBC8tqE@ep-weathered-mouse-851080.eu-central-1.aws.neon.tech/ve
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +44,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install deps (with cache)
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Next.js cache
         uses: actions/cache@v3

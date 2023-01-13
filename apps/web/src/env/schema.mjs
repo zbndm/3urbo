@@ -22,8 +22,8 @@ export const serverSchema = z.object({
   GOOGLE_CLIENT_ID: z.string(),
   GOOGLE_CLIENT_SECRET: z.string(),
 });
+
 /**
- * 
  * Specify your client-side environment variables schema here.
  * This way you can ensure the app isn't built with invalid env vars.
  * To expose them to the client, prefix them with `NEXT_PUBLIC_`.
@@ -31,7 +31,6 @@ export const serverSchema = z.object({
 export const clientSchema = z.object({
   // NEXT_PUBLIC_CLIENTVAR: z.string(),
 });
-
 
 /**
  * You can't destruct `process.env` as a regular object, so you have to do
