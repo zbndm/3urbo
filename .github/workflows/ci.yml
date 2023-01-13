@@ -1,21 +1,21 @@
 name: CI
 
 on:
-  pull_request:
-    branches: ["*"]
+  # pull_request:
+  #   branches: ["*"]
   push:
     branches: ["main"]
 
 # You can leverage Vercel Remote Caching with Turbo to speed up your builds
 # @link https://turborepo.org/docs/core-concepts/remote-caching#remote-caching-on-vercel-builds
 env:
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  TURBO_TEAM: k6
+  TURBO_TOKEN: orXUG7C0upy1PfeztANQZEBp
 
 jobs:
   build-lint:
     env:
-      DATABASE_URL: file:./db.sqlite
+      DATABASE_URL: postgresql://o9:TgFtBKrhqxTCpuo0Y_lN2Q@lllllll-3389.6zw.cockroachlabs.cloud:26257/x?sslmode=verify-full
     runs-on: ubuntu-latest
 
     steps:
